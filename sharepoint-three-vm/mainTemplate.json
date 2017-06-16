@@ -297,6 +297,8 @@
     "spConfigurationFunction": "ConfigureSharePointServer.ps1\\ConfigureSharePointServer",
     "sqlPrepareModulesURL": "[concat(variables('assetLocation'),'/PrepareSqlServer.ps1.zip')]",
     "sqlPreparationFunction": "PrepareSqlServer.ps1\\PrepareSqlServer",
+    "spEnvVariableURL": "[concat(variables('assetLocation'),'/FixEnvVariable.ps1.zip')]",
+    "spEnvVariableFunction": "FixEnvVariable.ps1\\FixEnvVariable",
     "spPrepareModulesURL": "[concat(variables('assetLocation'),'/PrepareSharePointServer.ps1.zip')]",
     "spPreparationFunction": "PrepareSharePointServer.ps1\\PrepareSharePointServer",
     "SettingUpSharepointIPUrl": "[concat(parameters('baseUrl'),'/publicip-',parameters('spPublicIPNewOrExisting'),'.json')]",
@@ -705,6 +707,9 @@
           },
           "location": {
             "value": "[parameters('location')]"
+          },
+          "spEnvVariableURL": {
+            "value": "[variables('spEnvVariableURL')]"
           },
           "spPrepareModulesURL": {
             "value": "[variables('spPrepareModulesURL')]"

@@ -8,6 +8,12 @@
     "location": {
       "type": "string"
     },
+    "spEnvVariableURL":{
+      "type": "string"
+    },
+    "spEnvVariableFunction":{
+      "type": "string"
+    },
     "spPrepareModulesURL": {
       "type": "string"
     },
@@ -98,6 +104,30 @@
             "storageUri": "[concat('http://',parameters('storageAccountNamePrefix'),'2.blob.core.windows.net')]"
           }
         }
+      }
+    },
+    {
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "name": "[concat(parameters('spVMName'),'/ConfigureEnvVariable')]",
+      "apiVersion": "2015-06-15",
+      "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', parameters('spVMName'))]"
+      ],
+      "location": "[parameters('location')]",
+      "properties": {
+        "publisher": "Microsoft.Powershell",
+        "type": "DSC",
+        "typeHandlerVersion": "2.20",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "ModulesUrl": "[parameters('spEnvVariableURL')]",
+          "wmfVersion": "4.0",
+          "ConfigurationFunction": "[parameters('spEnvVariableFunction')]",
+          "Properties": {
+                "DNSServer": "[parameters('DNSServerAddress')]"
+          }
+        },
+        "protectedSettings": null
       }
     },
     {
