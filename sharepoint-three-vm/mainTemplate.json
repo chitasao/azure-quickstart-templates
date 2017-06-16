@@ -711,6 +711,9 @@
           "spEnvVariableURL": {
             "value": "[variables('spEnvVariableURL')]"
           },
+          "spEnvVariableFunction": {
+            "value": "[variables('spEnvVariableFunction')]"
+          },
           "spPrepareModulesURL": {
             "value": "[variables('spPrepareModulesURL')]"
           },
