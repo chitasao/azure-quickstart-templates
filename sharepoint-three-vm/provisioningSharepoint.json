@@ -8,9 +8,9 @@
     "location": {
       "type": "string"
     },
-    "spEnvVariableURL":{
-      "type": "string"
-    },
+    // "spEnvVariableURL":{
+    //   "type": "string"
+    // },
     "spEnvVariableFunction":{
       "type": "string"
     },
