@@ -11,9 +11,9 @@
     // "spEnvVariableURL":{
     //   "type": "string"
     // },
-    "spEnvVariableFunction":{
-      "type": "string"
-    },
+    // "spEnvVariableFunction":{
+    //   "type": "string"
+    // },
     "spPrepareModulesURL": {
       "type": "string"
     },
